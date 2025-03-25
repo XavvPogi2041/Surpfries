@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpfries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        
+        body {
+            background: radial-gradient(circle, #ffcc00, #ff4500);
+            margin: 0;
+            font-family: 'Luckiest Guy', cursive; 
+            color: rgba(255, 255, 255, 0.9);
+            scroll-behavior: smooth;
+            font-size: 26px;
+            text-align: center;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+        
+        .content {
+            flex: 1; 
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: radial-gradient(circle, #c23b22, #8b0000);
+            padding: 2px 20px;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes glow {
+            0% { filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)); }
+            50% { filter: drop-shadow(0 0 20px rgba(255, 255, 0, 1.0)); }
+            100% { filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)); }
+        }
+
+        .logo img {
+            max-width: 80px;
+            display: block;
+            animation: glow 2s infinite alternate;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 30px rgba(255, 255, 0, 1.0), 
+                        -2px -2px 15px rgba(255, 255, 0, 0.8); 
+        }
+
+        .nav-links a:hover {
+            color: #ff1600;
+            transform: scale(1.2);
+        }
+        
+        .footer {
+            background: radial-gradient(circle, #8b0000, #c23b22);
+            padding: 10px 5px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            max-width: 95%; 
+            margin: auto;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2em; 
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+        
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes text left, image right */
+    background: linear-gradient(to right, #ffcc00, #ff4500); 
+    padding: 20px;
+
+}
+
+.text-container {
+    flex: 1;
+    text-align: left;
+    padding-left: 30px;
+    font-size: 2.5em;
+    color: white;
+}
+
+.Pekture {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.Pekture img {
+    max-width: 250px; /* Adjust size */
+    height: auto;
+}
+    
+@media screen and (max-width: 768px) {
+            
+        .menu-icon {
+            font-size: 2.5em;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1002;
+            display: block;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 1), 
+                         0 0 20px rgba(255, 255, 0, 0.8);
+        }
+
+        .nav-links {
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out, opacity 0.3s;
+            padding: 20px 0;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        .nav-links.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nav-links a {
+            font-size: 2.5em;
+            padding: 15px;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        .footer {
+            font-size: 12px; 
+            padding: 8px 3px;
+        }
+    
+        .social-links a {
+            font-size: 1em; 
+        }
+
+        h1 {
+            font-size: 1.8rem; 
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+        }
+
+@media screen and (min-width: 769px) {
+        
+        .menu-icon {
+            display: none;
+        }
+        }
+    
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <a href="HomeP.html" aria-label="Home">
+             <img src="logo.png.png" class="logo-image">
+            </a>
+        </div>
+        
+        <button class="menu-icon" id="menuButton" aria-label="Toggle Menu" aria-controls="navMenu" aria-expanded="false">&#9776;</button>
+        
+        <div class="nav-links" id="navMenu">
+            <a href="HomeP.html" onclick="closeMenu()" aria-label="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="AboutP.html" onclick="closeMenu()" aria-label="About"><i class="fa-solid fa-circle-info"></i></a>
+            <a href="MenuP.html" onclick="closeMenu()" aria-label="Menu"><i class="fa-solid fa-map-marker-alt"></i></a>
+            <a href="OrderP.html" onclick="closeMenu()" aria-label="Order"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </nav>
+   
+     <div class="content">
+    <section id="SURPFRIES">
+    <div class="container">
+        <div class="text-container">
+            <h1>ABOUT US</h1>
+        </div>
+        <div class="Pekture">
+            <img src="surp.png" class="header-icon">
+        </div>
+    </div>
+</section>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+        <p>&copy; 2025 Surpfries. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        </div>
+    </footer>
+   
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            const button = document.getElementById("menuButton");
+            const isActive = menu.classList.contains("active");
+            menu.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
+            button.setAttribute("aria-expanded", !isActive);
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById("navMenu");
+            const button = document.getElementById("menuButton");
+            if (menu.classList.contains("active")) {
+                menu.classList.remove("active");
+                document.body.classList.remove("menu-open");
+                button.setAttribute("aria-expanded", "false");
+            }
+        }
+
+        document.getElementById("menuButton").addEventListener("click", toggleMenu);
+
+        document.addEventListener("click", function(event) {
+            const menu = document.getElementById("navMenu");
+            const menuIcon = document.getElementById("menuButton");
+
+            if (menu.classList.contains("active") && !menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
